@@ -3,4 +3,10 @@ project(Dijkstra)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Dijkstra main.cpp Graph.cpp Graph.h)
+include_directories(.)
+
+add_executable(Dijkstra
+        CMakeLists.txt
+        Graph.cpp
+        Graph.h
+        main.cpp)
