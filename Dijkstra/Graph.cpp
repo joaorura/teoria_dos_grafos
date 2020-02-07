@@ -1,19 +1,14 @@
 //
-// Created by alunoic on 05/02/2020.
+// Created by jmess on 06/02/2020.
 //
 
 #include "Graph.h"
-
-#include <utility>
+#include <algorithm>
 
 Graph:: Graph(int size) {
     for (; size > 0; size--) {
         this->graph.push_back(AdjancyList());
     }
-}
-
-Graph:: Graph(TheGraph graph) {
-    this->graph = move(graph);
 }
 
 bool Graph:: checkElement(int u) {
@@ -24,7 +19,7 @@ bool Graph:: addVertex(int u, int v, int weight) {
     Vertex vertex(v, weight);
 
     if (!this->checkElement(u) or
-    find(this->graph[u].begin(), this->graph[u].end(), vertex) == this->graph[u].end()) {
+        find(this->graph[u].begin(), this->graph[u].end(), vertex) != this->graph[u].end()) {
         return false;
     }
 
@@ -39,4 +34,8 @@ AdjancyList* Graph:: getAdjance(int u) {
     else {
         return nullptr;
     }
+}
+
+unsigned int Graph::getSize() {
+    return this->graph.size();
 }

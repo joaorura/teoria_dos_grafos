@@ -1,18 +1,28 @@
 #include <iostream>
-#include <bits/stdc++.h>
 #include "Graph.h"
+#include "Dijkstra.h"
 
 using namespace std;
 
+void printVector(const vector<int>& theVector) {
+    for (int i : theVector){
+        cout << i << " ";
+    }
+
+    cout << endl;
+}
+
 
 int main() {
-    Graph graph(4);
+    Graph graph(3);
     graph.addVertex(0, 2, 4);
-    graph.addVertex(0, 1, 4);
-    graph.addVertex(3, 1, 4);
-    graph.addVertex(2, 0, 4);
-    graph.addVertex(1, 2, 4);
-    graph.addVertex(2, 3, 4);
+    graph.addVertex(0, 1, 3);
+
+    Dijkstra dijkstra(&graph);
+    dijkstra.run(0);
+    vector<int> result = dijkstra.getAllResult();
+
+    printVector(result);
 
     return 0;
 }

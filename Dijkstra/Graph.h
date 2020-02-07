@@ -1,11 +1,11 @@
 //
-// Created by alunoic on 05/02/2020.
+// Created by jmess on 06/02/2020.
 //
 
-#ifndef DIJKSTRA_GRAPH_H
-#define DIJKSTRA_GRAPH_H
+#ifndef DIJKSTRA__GRAPH_H
+#define DIJKSTRA__GRAPH_H
 
-#include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
@@ -14,21 +14,21 @@ typedef vector<Vertex> AdjancyList;
 typedef vector<AdjancyList> TheGraph;
 
 class Graph {
-    private:
-        TheGraph graph;
+private:
+    TheGraph graph;
 
-    public:
-        explicit Graph(int);
+public:
+    explicit Graph(int);
 
-        explicit Graph(TheGraph);
+    bool checkElement(int);
 
-        bool checkElement(int);
+    bool addVertex(int, int, int);
 
-        bool addVertex(int, int, int);
+    unsigned int getSize();
 
-        AdjancyList* getAdjance(int);
+    AdjancyList* getAdjance(int);
 
 };
 
 
-#endif //DIJKSTRA_GRAPH_H
+#endif //DIJKSTRA__GRAPH_H
