@@ -18,16 +18,17 @@ private:
     TheGraph graph;
 
 public:
-    explicit Graph(int);
+    explicit Graph(unsigned int);
 
     bool checkElement(int);
 
     bool addVertex(int, int, int);
 
+    void readVertex();
+
     unsigned int getSize();
 
     AdjancyList* getAdjance(int);
-
 };
 
 

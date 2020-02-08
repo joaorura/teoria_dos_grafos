@@ -4,8 +4,11 @@
 
 #include "Graph.h"
 #include <algorithm>
+#include <iostream>
 
-Graph:: Graph(int size) {
+using namespace std;
+
+Graph:: Graph(unsigned int size) {
     for (; size > 0; size--) {
         this->graph.push_back(AdjancyList());
     }

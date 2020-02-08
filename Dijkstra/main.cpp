@@ -4,6 +4,30 @@
 
 using namespace std;
 
+Graph buildGraph() {
+    unsigned int size;
+    int u, v, w;
+
+    cout << "Building the graph!\n\tPlease enter with the number of elements of graph: ";
+    cin >> size;
+    cout << "\tEnter with edges of the Graph in format u v w, where are the vertices of origin, v the end and the weight of the edge:\n";
+    cout << "\tIf you want to finish the entries, just enter -1 -1 -1.\n";
+
+    Graph graph(size);
+    while(true) {
+        cout << "\n\t\tEnter with a new vertex: ";
+        cin >> u >> v >> w;
+
+        if (u == -1 and v == -1 and w == -1) {
+            break;
+        }
+
+        graph.addVertex(u, v, w);
+    }
+
+    return graph;
+}
+
 void printVector(const vector<int>& theVector) {
     for (int i : theVector){
         cout << i << " ";
@@ -14,10 +38,7 @@ void printVector(const vector<int>& theVector) {
 
 
 int main() {
-    Graph graph(3);
-    graph.addVertex(0, 2, 4);
-    graph.addVertex(0, 1, 3);
-
+    Graph graph = buildGraph();
     Dijkstra dijkstra(&graph);
     dijkstra.run(0);
     vector<int> result = dijkstra.getAllResult();
