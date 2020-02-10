@@ -28,9 +28,9 @@ Graph buildGraph() {
     return graph;
 }
 
-void printVector(const vector<int>& theVector) {
-    for (int i : theVector){
-        cout << i << " ";
+void printVector(unsigned int start, const vector<int>& theVector) {
+    for (unsigned int i = 0; i < theVector.size(); i++) {
+        cout << "(" << start << ", " << i << "): " << theVector[i] << endl;
     }
 
     cout << endl;
@@ -40,10 +40,13 @@ void printVector(const vector<int>& theVector) {
 int main() {
     Graph graph = buildGraph();
     Dijkstra dijkstra(&graph);
-    dijkstra.run(0);
+    unsigned int start;
+    cout << "Enter with start vertex of dijkstra: ";
+    cin >> start;
+    dijkstra.run((int) start);
     vector<int> result = dijkstra.getAllResult();
 
-    printVector(result);
+    printVector(start, result);
 
     return 0;
 }
