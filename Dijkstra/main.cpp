@@ -41,6 +41,9 @@ int main() {
     Graph graph = buildGraph();
     Dijkstra dijkstra(&graph);
     unsigned int start;
+    cout << "\n\nYour Graph: ";
+    cout << graph.toString();
+
     cout << "Enter with start vertex of dijkstra: ";
     cin >> start;
     dijkstra.run((int) start);
