@@ -5,22 +5,23 @@
 #ifndef KRUSKAL_UNIONFIND_H
 #define KRUSKAL_UNIONFIND_H
 
+#include <iostream>
+
+using namespace std;
 
 class UnionFind {
     private:
-        unsigned int size;
+        int size;
         int* elements;
 
     public:
-        explicit UnionFind(unsigned int);
+        explicit UnionFind(int);
 
-        int getRoot(int);
+        unsigned int getRoot(unsigned int);
 
-        bool checkSameSet(int, int);
+        bool checkSameSet(unsigned int, unsigned int);
 
-        unsigned int getSetSize(int);
-
-        void merge(int, int);
+        void merge(unsigned int, unsigned int);
 };
 
 

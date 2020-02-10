@@ -15,6 +15,7 @@ class Kruskal {
         UnionFind *uf;
         unsigned int cost;
         Graph* graph;
+        Graph* result;
 
         void execute();
     public:

@@ -6,6 +6,8 @@
 #define DIJKSTRA__GRAPH_H
 
 #include <vector>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -18,16 +20,17 @@ private:
     TheGraph graph;
 
 public:
-    explicit Graph(int);
+    explicit Graph(unsigned int);
 
-    bool checkElement(int);
+    bool checkElement(unsigned int);
 
     bool addVertex(int, int, int);
 
     unsigned int getSize();
 
-    AdjancyList* getAdjance(int);
+    AdjancyList* getAdjance(unsigned int);
 
+    string toString();
 };
 
 
