@@ -30,6 +30,8 @@ Graph buildGraph() {
 
 int main() {
     Graph graph = buildGraph();
+    cout << "\n\nYour Graph: ";
+    cout << graph.toString();
 
     Prim primExecution(&graph);
     primExecution.print();
