@@ -4,6 +4,7 @@ compile:
 exec:
 	./dijkstra < dijkstra.in > dijkstra.out
 
-clear:
+test:
+	./dijkstra
 
 
