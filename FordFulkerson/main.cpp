@@ -1,23 +1,43 @@
 #include "FordFulkerson.cpp"
 
+int** buildGraph() {
+    unsigned int size;
+    int u, v, w;
+
+    cout << "Building the graph!\n\tPlease enter with the number of elements of graph: ";
+    cin >> size;
+    cout << "\tEnter with edges of the Graph in format u v w, where are the vertices of origin, v the end and the weight of the edge:\n";
+    cout << "\tIf you want to finish the entries, just enter -1 -1 -1.\n";
+
+    qntVertices = size;
+    int** graph = createGraph(qntVertices);
+    while(true) {
+        cout << "\n\t\tEnter with a new vertex: ";
+        cin >> u >> v >> w;
+
+        if (u == -1 and v == -1 and w == -1) {
+            break;
+        }
+
+        addEdge(graph, u, v, w);
+    }
+
+    return graph;
+}
+
+
 int main(){
+    int start, end;
     cout << "FORD-FULKERSON ALGORITHM" << endl;
 
-    qntVertices = 6;
-    int** graph = createGraph(qntVertices);
+    int** graph = buildGraph();
 
-    addEdge(graph, 0, 1, 16);
-    addEdge(graph, 0, 2, 13);
-    addEdge(graph, 1, 2, 10);
-    addEdge(graph, 2, 1, 4);
-    addEdge(graph, 1, 3, 12);
-    addEdge(graph, 3, 2, 9);
-    addEdge(graph, 2, 4, 14);
-    addEdge(graph, 4, 3, 7);
-    addEdge(graph, 3, 5, 20);
-    addEdge(graph, 4, 5, 4);
-
-    fordFulkerson(graph, 0, 4);
+    cout << "Enter the start vertex: ";
+    cin >> start;
+    cout << "Enter the end vertex: ";
+    cin >> end;
+    
+    fordFulkerson(graph, start, end);
     cout << endl;
     destroyGraph();
 

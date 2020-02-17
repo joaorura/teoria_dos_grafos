@@ -50,5 +50,5 @@ void fordFulkerson(int** graph, int s, int t) {
 		maxFlow += pathFlow; 
 	} 
 
-	cout << "Max flow = " << maxFlow << endl; 
+	cout << "Max flow between " << s << " and " << t << " = " << maxFlow << endl; 
 }
