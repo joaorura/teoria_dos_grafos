@@ -1,3 +1,13 @@
+*.exe
+
 Dijkstra/dijsktra.out
 Dijkstra/dijsktra
-*.exe
+
+FordFulkerson/ford
+FordFulkerson/ford.out
+
+Prim/prim 
+Prim/prim.out 
+
+Kruskal/kruskal 
+Kruskal/kruskal.out
