@@ -1,0 +1,26 @@
+Building the graph!
+	Please enter with the number of elements of graph: 	Enter with edges of the Graph in format u v w, where are the vertices of origin, v the end and the weight of the edge:
+	If you want to finish the entries, just enter -1 -1 -1.
+
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+		Enter with a new vertex: 
+
+Your Graph: 0: (1; 16); (2; 13); 
+1: (2; 10); (3; 12); 
+2: (1; 4); (4; 14); 
+3: (2; 9); (5; 20); 
+4: (3; 7); (5; 4); 
+5: 
+
+MST Result
+	Cost: 47
+	Tree: (0, 0, 0); (0, 2, 13); (2, 1, 4); (1, 3, 12); (2, 4, 14); (4, 5, 4); 
